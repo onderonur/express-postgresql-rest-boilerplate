@@ -63,7 +63,7 @@ app.use('/messages', routes.message);
 const createUsersWithMessages = async () => {
   await models.User.create(
     {
-      username: 'onur onder',
+      username: 'onuronder',
       messages: [
         {
           text: 'This is the first message ever.'
