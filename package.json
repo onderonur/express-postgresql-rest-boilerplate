@@ -7,7 +7,7 @@
     "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "onderonur",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
