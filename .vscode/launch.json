@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch via NPM",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "debug"],
+      "runtimeArgs": ["run-script", "debug"],
       "port": 9229,
       "restart": true,
       "env": {
