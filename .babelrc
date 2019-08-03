@@ -1,6 +1,7 @@
 {
   "presets": ["@babel/preset-env"],
   // For vscode debugging
+  // TODO: May make these settings environment based
   "sourceMaps": true,
   "retainLines": true
 }
