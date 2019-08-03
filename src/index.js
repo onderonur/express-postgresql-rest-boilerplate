@@ -59,6 +59,25 @@ app.use('/session', routes.session);
 app.use('/users', routes.user);
 app.use('/messages', routes.message);
 
+// Error handling middleware
+// http://expressjs.com/en/api.html
+// Error-handling middleware always takes four arguments. You must provide four arguments to identify
+// it as an error-handling middleware function. Even if you don’t need to use the next object,
+// you must specify it to maintain the signature. Otherwise, the next object will be interpreted as
+// regular middleware and will fail to handle errors.
+// You define error-handling middleware LAST, after other app.use() and routes calls.
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  if (res.headersSent) {
+    next(err);
+  } else {
+    res.status(err.status || 500);
+    res.json({
+      message: err.message
+    });
+  }
+});
+
 // Seed Db
 const createUsersWithMessages = async () => {
   await models.User.create(
