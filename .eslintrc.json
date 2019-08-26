@@ -10,6 +10,7 @@
     "prefer-destructuring": "warn",
     "spaced-comment": "warn",
     "prefer-const": "warn",
-    "prefer-template": "warn"
+    "prefer-template": "warn",
+    "import/prefer-default-export": "off"
   }
 }

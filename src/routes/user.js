@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as userController from '../controllers/user';
 
 const router = Router();
 
@@ -6,14 +7,7 @@ const router = Router();
 
 // You can go through the resource represented by one URI with different operations
 // by using the http://localhost:8000/users API endpoint.
-router.get('/', async (req, res) => {
-  const users = await req.context.models.User.findAll();
-  return res.json(users);
-});
-
-router.get('/:userId', async (req, res) => {
-  const user = await req.context.models.User.findByPk(req.params.userId);
-  return res.json(user);
-});
+router.get('/', userController.getUsers);
+router.get('/:userId', userController.getUserById);
 
 export default router;

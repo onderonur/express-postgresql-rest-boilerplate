@@ -30,9 +30,7 @@ app.use(customMiddlewares.modelInjection);
 app.use(customMiddlewares.loggedInUser);
 
 // Routes
-app.use('/session', routes.session);
-app.use('/users', routes.user);
-app.use('/messages', routes.message);
+app.use('/api', routes);
 
 // You define error-handling middleware LAST, after other app.use() and routes calls.
 app.use(customMiddlewares.errorHandler);
